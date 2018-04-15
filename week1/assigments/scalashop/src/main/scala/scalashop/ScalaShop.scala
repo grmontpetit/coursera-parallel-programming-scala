@@ -136,7 +136,7 @@ object ScalaShop {
 
   val frame = new ScalaShopFrame
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     frame.repaint()
   }
 
