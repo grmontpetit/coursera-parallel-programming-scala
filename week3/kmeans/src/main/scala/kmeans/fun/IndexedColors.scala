@@ -3,12 +3,12 @@ package fun
 
 import scala.collection.GenSeq
 
-abstract sealed trait InitialSelectionStrategy
+sealed trait InitialSelectionStrategy
 case object RandomSampling extends InitialSelectionStrategy
 case object UniformSampling extends InitialSelectionStrategy
 case object UniformChoice extends InitialSelectionStrategy
 
-abstract sealed trait ConvergenceStrategy
+sealed trait ConvergenceStrategy
 case class ConvergedWhenSNRAbove(x: Double) extends ConvergenceStrategy
 case class ConvergedAfterNSteps(n: Int) extends ConvergenceStrategy
 case class ConvergedAfterMeansAreStill(eta: Double) extends ConvergenceStrategy
