@@ -62,7 +62,7 @@ class KMeans {
     * Rewrote the findAverage method...
     * I did not like the other one.
     */
-  def findAverage(oldMean: Point, points: GenSeq[Point]): Point = {
+  def findAverage(oldMean: Mean, points: GenSeq[Point]): Point = {
     val sums = points.foldLeft((0.0,0.0,0.0)) { (acc, p) =>
       (acc._1 + p.x, acc._2 + p.y, acc._3 + p.z)
     }
