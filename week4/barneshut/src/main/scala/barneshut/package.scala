@@ -44,11 +44,18 @@ package object barneshut {
   }
 
   case class Empty(centerX: Float, centerY: Float, size: Float) extends Quad {
-    def massX: Float = ???
-    def massY: Float = ???
-    def mass: Float = ???
-    def total: Int = ???
-    def insert(b: Body): Quad = ???
+    // center of mass x coordinate
+    def massX: Float = centerX
+    // center of mass y coordinate
+    def massY: Float = centerY
+    // total mass of bodies in that cell
+    def mass: Float = 0
+    // total nb. of bodies in the cell
+    def total: Int = 0
+    // The method insert creates a new quadtree
+    // which additionally contains the body b,
+    // and covers the same area in space as the original quadtree
+    def insert(b: Body): Quad = Leaf(centerX, centerY, size, Seq(b))
   }
 
   case class Fork(
